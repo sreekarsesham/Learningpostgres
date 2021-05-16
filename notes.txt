@@ -1,0 +1,6 @@
+#######################
+## installation
+#######################
+
+--> sudo apt install postgresql postgresql-contrib
+--> type service postgresql to know what all commands we can use for postgres like start,stop,status etc... 
