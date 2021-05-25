@@ -1,6 +1,92 @@
-#######################
-## installation
-#######################
+
+Installation
+------------
 
 --> sudo apt install postgresql postgresql-contrib
---> type service postgresql to know what all commands we can use for postgres like start,stop,status etc... 
+--> type service postgresql to know what all commands we can use for postgres like start,stop,status etc...
+
+set a pwd to postgres
+--------------------
+ALTER USER username PASSWORD 'your password';
+
+creating multiple users
+------------------------
+
+CREATE USER username WITH attributes LOGIN ENCRYPTED PASSWORD 'your pwd'
+CREATE DATABASE username used above; --> this is store user info
+
+
+attributes can be : Superuser,Create role,Create DB,Replication,Bypass RLS)
+
+login to postgres
+-----------------
+
+sudo su postgres 
+type psql 
+now u can write ur sql commands here 
+
+listing the databases
+----------------------
+
+\l   will list all the data bases in ur system
+\du  will show the users 
+
+
+creating a database
+-------------------
+--> sudo su postgres
+--> psql
+--> \l
+--> create database test ;
+--> \l
+
+deleting  a database
+-------------------
+--> drop database test
+
+connecting to the database
+-------------------------
+--> create database practice;
+--> \c practice;
+
+creating a table
+-------------------------
+CREATE TABLE IF NOT EXISTS user(
+	username varchar(10)
+	password varchar(10)
+
+)
+
+########################
+## commads in postgres
+########################
+
+	Command							     usage			
+----------------------------					-----------------					
+create database databasename ;					creating database
+---------------------------------------------------------------------------------------------
+drop database databasename ;					deleting database
+-------------------------------------------------------------------------------------------
+\c databasename;						connecting to a database
+-------------------------------------------------------------------------------------------
+CREATE TABLE IF NOT EXISTS tablename(
+    column1 datatype(length) constraints,			creating a table
+    column2 datatype(length) constraints
+
+)
+----------------------------------------------------------------------------------------------
+\dt								shows tables inside a databse
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+https://www.postgresqltutorial.com/load-postgresql-sample-database/
